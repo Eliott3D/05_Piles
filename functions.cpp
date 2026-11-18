@@ -8,6 +8,21 @@
 
 using namespace std;
 
+void push(array<int, max_size>& arr, size_t& current_length, int new_value) {
+    if (current_length + 1 == max_size) {
+        throw overflow_error("impossible d'empiler dans une pile pleine");
+    }
+    arr[current_length] = new_value;
+    current_length++;
+}
+
+void pop(size_t& current_length) {
+    if (current_length == 0) {
+        throw underflow_error("impossible de dépiler une pile vide");
+    }
+    current_length--;
+}
+
 int& top(array<int, Size>& array, size_t& number)
 {
     if (number == 0)
@@ -36,4 +51,8 @@ bool empty(size_t& number)
 size_t size(size_t& number)
 {
     return number;
+}
+
+void clear(size_t& current_length) {
+    current_length = 0;
 }
