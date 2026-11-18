@@ -11,8 +11,8 @@ static const size_t max_size = 5;
 
 void push(std::array<int, max_size>& arr, size_t& current_length, int new_value);
 
-void pop(std::array<int, max_size>& arr, size_t& current_length);
+void pop(size_t& current_length);
 
-void clear(std::array<int, max_size>& arr, size_t& current_length);
+void clear(size_t& current_length);
 
 #endif //INC_05_PILES_FUNCTIONS_H
