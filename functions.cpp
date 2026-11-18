@@ -23,34 +23,34 @@ void pop(size_t& current_length) {
     current_length--;
 }
 
-int& top(array<int, Size>& array, size_t& number)
+int& top(array<int, max_size>& arr, size_t& current_length)
 {
-    if (number == 0)
+    if (current_length == 0)
     {
         throw underflow_error ("impossible de consulter le sommet d'une pile vide.");
     }
 
-    return array[number-1];
+    return arr[current_length-1];
 }
 
-int& top(array<int, Size>& array, size_t& number, int value)
+int& top(array<int, max_size>& arr, size_t& current_length, int new_value)
 {
-    if (number == 0)
+    if (current_length == 0)
     {
         throw underflow_error ("impossible de remplacer le sommet d'une pile vide.");
     }
 
-    return array[number-1] = value;
+    return arr[current_length-1] = new_value;
 }
 
-bool empty(size_t& number)
+bool empty(size_t& current_length)
 {
-    return number == 0;
+    return current_length == 0;
 }
 
-size_t size(size_t& number)
+size_t size(size_t& current_length)
 {
-    return number;
+    return current_length;
 }
 
 void clear(size_t& current_length) {
