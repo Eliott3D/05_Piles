@@ -12,7 +12,7 @@ void push(array<int, max_size>& arr, size_t& current_length, int new_value) {
     if (current_length + 1 == max_size) {
         throw overflow_error("impossible d'empiler dans une pile pleine");
     }
-    arr[current_length] = new_value;
+    arr.at(current_length) = new_value;
     current_length++;
 }
 
@@ -30,17 +30,17 @@ int& top(array<int, max_size>& arr, size_t& current_length)
         throw underflow_error ("impossible de consulter le sommet d'une pile vide.");
     }
 
-    return arr[current_length-1];
+    return arr.at(current_length-1);
 }
 
-int& top(array<int, max_size>& arr, size_t& current_length, int new_value)
+void top(array<int, max_size>& arr, size_t& current_length, int new_value)
 {
     if (current_length == 0)
     {
         throw underflow_error ("impossible de remplacer le sommet d'une pile vide.");
     }
 
-    return arr[current_length-1] = new_value;
+    arr.at(current_length - 1) = new_value;
 }
 
 bool empty(size_t& current_length)

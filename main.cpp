@@ -1,8 +1,8 @@
 #include <iostream>
 #include <sstream>
 #include <limits>
+#include <array>
 #include <iomanip>
-
 #include "functions.h"
 
 using namespace std;
@@ -31,6 +31,8 @@ int display_pile(const array<int,max_size>& arr, const size_t& current_size)
 
 int main()
 {
+    array<int, max_size> arr = {};
+    size_t current_length = 0;
     stringstream introduction;
 
     introduction << "1 - Empiler" << endl
@@ -60,8 +62,80 @@ int main()
             continue;
         }
 
-        cout << user_input << endl;
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
+        switch (user_input) {
+            case 1: {
+                int new_value = 0;
+                cout << "Valeur : ";
+                if (!(cin >> new_value)) {
+                    cout << "Seul un entier peut être ajouté à la pile." << endl;
+                } else {
+                    try {
+                        push(arr, current_length, new_value);
+                        cout << "Valeur empilée." << endl;
+                    }
+                    catch (const exception& error) {
+                        cout << "Erreur : " << error.what() << endl;
+                    }
+                }
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                break;
+            }
+            case 2: {
+                try {
+                    pop(current_length);
+                    cout << "Valeur retirée : " << arr[current_length] << endl;
+                } catch (const exception& error) {
+                    cout << "Erreur : " << error.what() << endl;
+                }
+                break;
+            }
+            case 3: {
+                try {
+                    const int current_top = top(arr, current_length);
+                    cout << "Sommet : " << current_top << endl;
+                } catch (const exception& error) {
+                    cout << "Erreur : " << error.what() << endl;
+                }
+            }
+            case 4: {
+                int new_value = 0;
+                cout << "Valeur de remplacement : ";
+                if (!(cin >> new_value)) {
+                    cout << "Seul un entier peut être ajouté à la pile." << endl;
+                } else {
+                    try {
+                        top(arr, current_length, new_value);
+                        cout << "Valeur remplacée." << endl;
+                    }
+                    catch (const exception& error) {
+                        cout << "Erreur : " << error.what() << endl;
+                    }
+                }
+            }
+            case 5: {
+                cout << (empty(current_length) ? "La pile est vide." : "La pile n'est pas vide.") << endl;
+                break;
+            }
+            case 6: {
+                cout << "Nombre de valeurs : " << size(current_length) << endl;
+                break;
+            }
+            case 7: {
+                clear(current_length);
+                cout << "Pile vidée" << endl;
+                break;
+            }
+            default :
+                break;
+        }
+
+
+
+    cout << endl;
     } while (user_input != 0);
 
     cout << "Fin de programme.";
