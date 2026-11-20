@@ -80,12 +80,6 @@ int main()
                 }
             }
             case 4: {
-                // try {
-                //     top(arr, current_length);
-                // } catch (exception& error) {
-                //     cout << "Erreur : " << error.what() << endl;
-                //     break;
-                // }
                 int new_value = 0;
                 cout << "Valeur de remplacement : ";
                 if (!(cin >> new_value)) {
@@ -99,6 +93,9 @@ int main()
                         cout << "Erreur : " << error.what() << endl;
                     }
                 }
+            }
+            case 5: {
+                cout << (empty(current_length) ? "La pile est vide." : "La pile n'est pas vide.") << endl;
             }
 
             default :
