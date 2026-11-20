@@ -12,7 +12,7 @@ static const size_t max_size = 5;
 void push(std::array<int, max_size>& arr, size_t& current_length, int new_value);
 void pop(size_t& current_length);
 int& top(std::array<int, max_size>& arr, size_t& current_length);
-int& top(std::array<int, max_size>& arr, size_t& current_length, int new_value);
+void top(std::array<int, max_size>& arr, size_t& current_length, int new_value);
 bool empty(size_t& current_length);
 size_t size(size_t& current_length);
 void clear(size_t& current_length);
