@@ -1,5 +1,6 @@
 #include <iostream>
 #include <sstream>
+#include <limits>
 
 using namespace std;
 
@@ -22,5 +23,23 @@ int main()
     cout << "Ce programme permet de manipuler une pile d'entiers." << endl << endl;
 
     cout << introduction.str() << endl;
-    return 0;
+
+    int user_input = -1;
+    do {
+        cout << "Votre choix : ";
+
+        if (!(cin >> user_input) || user_input < 0 || user_input > 8) {
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            user_input = -1;
+            continue;
+        }
+
+        cout << user_input << endl;
+
+    } while (user_input != 0);
+
+    cout << "Fin de programme.";
+
+    return EXIT_SUCCESS;
 }
