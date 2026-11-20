@@ -13,7 +13,7 @@ int display_pile(const array<int,max_size>& arr, const size_t& current_size)
     case 0:
         cout << "La pile est vide" << endl; break;
         case 1:
-        cout << "Sommet / fond" << setw(5) << " -> " << arr.at(current_size-1) ; break;
+        cout << "Sommet / fond" << setw(5) << " -> " << arr.at(current_size-1) << endl ; break;
         default:
         cout << left << setw(6) << "Sommet" << setw(5) << " -> " << right << setw(10) << arr.at(current_size-1) << endl;
 
@@ -100,6 +100,7 @@ int main()
                 } catch (const exception& error) {
                     cout << "Erreur : " << error.what() << endl;
                 }
+                break;
             }
             case 4: {
                 int new_value = 0;
@@ -115,6 +116,7 @@ int main()
                         cout << "Erreur : " << error.what() << endl;
                     }
                 }
+                break;
             }
             case 5: {
                 cout << (empty(current_length) ? "La pile est vide." : "La pile n'est pas vide.") << endl;
@@ -129,12 +131,14 @@ int main()
                 cout << "Pile vidée" << endl;
                 break;
             }
+            case 8: {
+                display_pile(arr, current_length);
+                break;
+            }
             default :
                 break;
         }
-
-
-
+        
     cout << endl;
     } while (user_input != 0);
 
