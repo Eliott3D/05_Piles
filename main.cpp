@@ -1,8 +1,33 @@
 #include <iostream>
 #include <sstream>
 #include <limits>
+#include <iomanip>
+
+#include "functions.h"
 
 using namespace std;
+
+int display_pile(const array<int,max_size>& arr, const size_t& current_size)
+{
+    switch (current_size){
+    case 0:
+        cout << "La pile est vide" << endl; break;
+        case 1:
+        cout << "Sommet / fond" << setw(5) << " -> " << arr.at(current_size-1) ; break;
+        default:
+        cout << left << setw(6) << "Sommet" << setw(5) << " -> " << right << setw(10) << arr.at(current_size-1) << endl;
+
+        for (size_t index = current_size-2; index > 0; index--)
+        {
+            cout << right << setw(21) << arr[index] << endl;
+        }
+
+        cout << left << setw(6) << "Fond" << setw(5) << " -> " << setw(10) << right << arr.at(0) << endl;
+
+        break;
+    }
+    return 1;
+}
 
 int main()
 {
