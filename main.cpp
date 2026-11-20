@@ -96,8 +96,17 @@ int main()
             }
             case 5: {
                 cout << (empty(current_length) ? "La pile est vide." : "La pile n'est pas vide.") << endl;
+                break;
             }
-
+            case 6: {
+                cout << "Nombre de valeurs : " << size(current_length) << endl;
+                break;
+            }
+            case 7: {
+                clear(current_length);
+                cout << "Pile vidée" << endl;
+                break;
+            }
             default :
                 break;
         }
