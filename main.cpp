@@ -132,6 +132,10 @@ int main()
                 cout << "Pile vidée" << endl;
                 break;
             }
+            case 8: { // case Display
+                display_pile(arr, current_length);
+                break;
+            }
             default :
                 break;
         }
