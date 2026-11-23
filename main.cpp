@@ -103,6 +103,7 @@ int main()
                 } catch (const exception& error) {
                     cout << "Erreur : " << error.what() << endl;
                 }
+                break;
             }
             case 4: { // case Modify Top
                 int new_value = 0;
@@ -118,6 +119,7 @@ int main()
                         cout << "Erreur : " << error.what() << endl;
                     }
                 }
+                break;
             }
             case 5: { // case Empty
                 cout << (empty(current_length) ? "La pile est vide." : "La pile n'est pas vide.") << endl;
