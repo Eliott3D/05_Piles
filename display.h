@@ -7,6 +7,7 @@
 #include <array>
 #include "stack.h"
 
+void display_menu();
 void display_stack(const std::array<int,max_size>& arr, const size_t& current_size);
 
 

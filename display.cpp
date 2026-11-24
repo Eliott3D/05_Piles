@@ -8,6 +8,19 @@
 
 using namespace std;
 
+/// Display the menu
+void display_menu() {
+    cout << "1 - Empiler" << endl
+         << "2 - Dépiler" << endl
+         << "3 - Consulter le sommet" << endl
+         << "4 - Modifier l'élément au sommet" << endl
+         << "5 - Vérifier si la pile est vide" << endl
+         << "6 - Afficher le nombre de valeurs" << endl
+         << "7 - Vider la pile" << endl
+         << "8 - Afficher toute la pile" << endl
+         << "0 - Quitter" << endl << endl;
+}
+
 /// Display an array in a readable format
 /// @param arr Array to display
 /// @param current_size Current size of the array to display
