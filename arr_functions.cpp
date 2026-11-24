@@ -9,7 +9,7 @@
 using namespace std;
 
 void push(array<int, max_size>& arr, size_t& current_length, int new_value) {
-    if (current_length + 1 == max_size) {
+    if (current_length >= max_size) {
         throw overflow_error("impossible d'empiler dans une pile pleine");
     }
     arr.at(current_length) = new_value;
