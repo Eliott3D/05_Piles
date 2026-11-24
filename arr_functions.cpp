@@ -10,7 +10,7 @@ using namespace std;
 
 void push(array<int, max_size>& arr, size_t& current_length, int new_value) {
     if (current_length >= max_size) {
-        throw overflow_error("impossible d'empiler dans une pile pleine");
+        throw overflow_error("impossible d'empiler dans une pile pleine.");
     }
     arr.at(current_length) = new_value;
     current_length++;
@@ -18,7 +18,7 @@ void push(array<int, max_size>& arr, size_t& current_length, int new_value) {
 
 void pop(size_t& current_length) {
     if (current_length == 0) {
-        throw underflow_error("impossible de dépiler une pile vide");
+        throw underflow_error("impossible de dépiler une pile vide.");
     }
     current_length--;
 }
