@@ -49,12 +49,13 @@ int main()
 
 
 
+
     cout << "Ce programme permet de manipuler une pile d'entiers." << endl << endl;
 
-    cout << introduction.str() << endl;
 
     int user_input = -1;
     do {
+        cout << introduction.str() << endl;
         cout << "Votre choix : ";
 
         if (!(cin >> user_input) || user_input < 0 || user_input > 8) {
