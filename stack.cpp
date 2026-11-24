@@ -23,24 +23,22 @@ void pop(size_t& current_length) {
     current_length--;
 }
 
-int& top(array<int, max_size>& arr, size_t& current_length)
+int top(const array<int, max_size>& arr, size_t& current_length)
 {
     if (current_length == 0)
     {
         throw underflow_error ("impossible de consulter le sommet d'une pile vide.");
     }
-
     return arr.at(current_length-1);
 }
 
-void top(array<int, max_size>& arr, size_t& current_length, int new_value)
+int& top(array<int, max_size>& arr, size_t& current_length)
 {
     if (current_length == 0)
     {
         throw underflow_error ("impossible de remplacer le sommet d'une pile vide.");
     }
-
-    arr.at(current_length - 1) = new_value;
+    return arr.at(current_length - 1);
 }
 
 bool empty(size_t& current_length)

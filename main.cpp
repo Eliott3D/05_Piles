@@ -11,6 +11,7 @@ using namespace std;
 int main()
 {
     array<int, max_size> arr = {};
+    const array<int, max_size>& arr_read = arr;
     size_t current_length = 0;
 
     cout << "Ce programme permet de manipuler une pile d'entiers." << endl << endl;
@@ -53,7 +54,7 @@ int main()
             case 2: { // case Pop
                 try {
                     pop(current_length);
-                    cout << "Valeur retirée : " << arr[current_length] << endl;
+                    cout << "Valeur retirée : " << arr.at(current_length) << endl;
                 } catch (const exception& error) {
                     cout << "Erreur : " << error.what() << endl;
                 }
@@ -61,7 +62,7 @@ int main()
             }
             case 3: { // case Top
                 try {
-                    const int current_top = top(arr, current_length);
+                    const int current_top = top(arr_read, current_length);
                     cout << "Sommet : " << current_top << endl;
                 } catch (const exception& error) {
                     cout << "Erreur : " << error.what() << endl;
@@ -75,7 +76,7 @@ int main()
                     cout << "Seul un entier peut être ajouté à la pile." << endl;
                 } else {
                     try {
-                        top(arr, current_length, new_value);
+                        top(arr, current_length) = new_value;
                         cout << "Valeur remplacée." << endl;
                     }
                     catch (const exception& error) {

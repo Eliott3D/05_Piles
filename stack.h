@@ -23,13 +23,14 @@ void pop(size_t& current_length);
 /// @param arr Array to get the value from
 /// @param current_length Current length of the array to get the value from
 /// @return Value on top of the array
-int& top(std::array<int, max_size>& arr, size_t& current_length);
+int top(const std::array<int, max_size>& arr, size_t& current_length);
 
 /// Modify value on top of an array
 /// @param arr Array to get the value from
-/// @param current_length Current length of the array to get the valude from
+/// @param current_length Current length of the array to get the value from
 /// @param new_value Value that will replace the value
-void top(std::array<int, max_size>& arr, size_t& current_length, int new_value);
+/// @return Adress of the top value
+int& top(std::array<int, max_size>& arr, size_t& current_length);
 
 /// Say if an array is empty
 /// @param current_length Current length of the array
