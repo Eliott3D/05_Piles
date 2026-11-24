@@ -3,8 +3,8 @@
 //
 
 #include "stack.h"
-# include <array>
-# include <stdexcept>
+#include <array>
+#include <stdexcept>
 
 using namespace std;
 
@@ -23,7 +23,7 @@ void pop(size_t& current_length) {
     current_length--;
 }
 
-int top(const array<int, max_size>& arr, size_t& current_length)
+int top(const array<int, max_size>& arr, size_t current_length)
 {
     if (current_length == 0)
     {
@@ -32,7 +32,7 @@ int top(const array<int, max_size>& arr, size_t& current_length)
     return arr.at(current_length-1);
 }
 
-int& top(array<int, max_size>& arr, size_t& current_length)
+int& top(array<int, max_size>& arr, size_t current_length)
 {
     if (current_length == 0)
     {
@@ -41,12 +41,12 @@ int& top(array<int, max_size>& arr, size_t& current_length)
     return arr.at(current_length - 1);
 }
 
-bool empty(size_t& current_length)
+bool empty(size_t current_length)
 {
     return current_length == 0;
 }
 
-size_t size(size_t& current_length)
+size_t size(size_t current_length)
 {
     return current_length;
 }

@@ -1,9 +1,8 @@
 #include <iostream>
 #include <cstdlib>
-#include <sstream>
 #include <limits>
 #include <array>
-#include <iomanip>
+#include <stdexcept>
 #include "stack.h"
 #include "display.h"
 
@@ -26,6 +25,7 @@ int main()
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
             user_input = -1;
+            cout << endl;
             continue;
         }
 
@@ -38,14 +38,17 @@ int main()
                 case 1: { // case Push
                     int new_value = 0;
                     cout << "Valeur : ";
-                    if (!(cin >> new_value)) {
+                    const bool valid = static_cast<bool>(cin >> new_value);
+                    cin.clear();
+                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+                    if (!valid) {
                         cout << "Seul un entier peut être ajouté à la pile." << endl;
                     } else {
                         push(arr, current_length, new_value);
                         cout << "Valeur empilée." << endl;
                     }
-                    cin.clear();
-                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
                     break;
                 }
                 case 2: { // case Pop
@@ -65,14 +68,16 @@ int main()
                 case 4: { // case Modify Top
                     int new_value = 0;
                     cout << "Valeur de remplacement : ";
-                    if (!(cin >> new_value)) {
-                        cout << "Seul un entier peut être ajouté à la pile." << endl;
+                    const bool valid = static_cast<bool>(cin >> new_value);
+                    cin.clear();
+                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+                    if (!valid) {
+                        cout << "Seul un entier est accepté." << endl;
                     } else {
                         top(arr, current_length) = new_value;
                         cout << "Valeur remplacée." << endl;
                     }
-                    cin.clear();
-                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
                     break;
                 }
                 case 5: { // case Empty

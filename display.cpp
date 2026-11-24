@@ -6,9 +6,9 @@
 #include <iostream>
 #include <iomanip>
 
+
 using namespace std;
 
-/// Display the menu
 void display_menu() {
     cout << "1 - Empiler" << endl
          << "2 - Dépiler" << endl
@@ -21,10 +21,7 @@ void display_menu() {
          << "0 - Quitter" << endl << endl;
 }
 
-/// Display an array in a readable format
-/// @param arr Array to display
-/// @param current_size Current size of the array to display
-void display_stack(const array<int,max_size>& arr, const size_t& current_size)
+void display_stack(const array<int,max_size>& arr, size_t current_size)
 {
     const int label_width = 7;
     const int arrow_width = 3;
