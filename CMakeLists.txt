@@ -4,6 +4,8 @@ project(05_Piles)
 set(CMAKE_CXX_STANDARD 20)
 
 add_executable(05_Piles main.cpp
-        arr_functions.cpp
-        arr_functions.h
+        stack.cpp
+        stack.h
+        display.cpp
+        display.h
 )

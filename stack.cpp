@@ -2,7 +2,7 @@
 // Created by lesco on 18.11.2026.
 //
 
-#include "arr_functions.h"
+#include "stack.h"
 # include <array>
 # include <stdexcept>
 

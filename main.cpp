@@ -3,7 +3,7 @@
 #include <limits>
 #include <array>
 #include <iomanip>
-#include "arr_functions.h"
+#include "stack.h"
 
 using namespace std;
 
