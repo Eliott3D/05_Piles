@@ -14,9 +14,9 @@ void display_pile(const array<int,max_size>& arr, const size_t& current_size)
 {
     switch (current_size){
     case 0:
-        cout << "La pile est vide" << endl; break;
+        cout << "La pile est vide." << endl; break;
         case 1:
-        cout << "Sommet / fond" << setw(5) << " -> " << arr.at(current_size-1) ; break;
+        cout << "Sommet / Fond" << setw(5) << " -> " << arr.at(current_size-1) ; break;
         default:
         cout << left << setw(6) << "Sommet" << setw(5) << " -> " << right << setw(10) << arr.at(current_size-1) << endl;
 
@@ -33,7 +33,7 @@ void display_pile(const array<int,max_size>& arr, const size_t& current_size)
 
 int main()
 {
-    std::array<int, max_size> arr = {};
+    array<int, max_size> arr = {};
     size_t current_length = 0;
     stringstream introduction;
 
@@ -131,7 +131,7 @@ int main()
             }
             case 7: { // case Clear
                 clear(current_length);
-                cout << "Pile vidée" << endl;
+                cout << "Pile vidée." << endl;
                 break;
             }
             case 8: { // case Display
